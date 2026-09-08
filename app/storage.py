@@ -41,3 +41,14 @@ class LocalStore:
                 ),
             )
             return int(cur.lastrowid)
+
+    def list_recent(self, limit: int = 25) -> list[dict]:
+        with sqlite3.connect(self.path) as con:
+            rows = con.execute(
+                "SELECT id, created_at, schema_name FROM records ORDER BY id DESC LIMIT ?",
+                (limit,),
+            ).fetchall()
+        return [
+            {"record_id": row[0], "created_at": row[1], "schema_name": row[2]}
+            for row in rows
+        ]

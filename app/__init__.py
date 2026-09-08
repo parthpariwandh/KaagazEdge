@@ -1,0 +1,1 @@
+"""KaagazEdge application package."""

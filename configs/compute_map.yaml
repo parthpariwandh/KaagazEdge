@@ -1,0 +1,47 @@
+device_targets:
+  primary:
+    - HP OmniBook Ultra Snapdragon X2 Plus
+    - HP OmniBook 3 Snapdragon X
+    - HP EliteBook X G2q Snapdragon X2
+  chipsets:
+    - qualcomm-snapdragon-x-elite
+    - qualcomm-snapdragon-x2-elite
+
+runtime:
+  windows:
+    execution_provider: QNN
+    fallback: CPU
+    windows_ml: true
+
+models:
+  asr:
+    hub_candidates:
+      - Whisper-Small-Quantized
+      - Distil-Whisper
+      - Whisper-Large-V3-Turbo-Quantized
+    unit: NPU
+    target_latency_ms: 2000
+  document_vlm:
+    hub_candidates:
+      - Qwen2.5-VL-7B-Instruct
+      - Intern3-5-VL-2B
+    unit: NPU
+    target_latency_ms: 4000
+  llm:
+    hub_candidates:
+      - Qwen3-1.7B
+      - Qwen3-4B-Instruct-2507
+      - Granite-4.0-Micro
+    unit: NPU
+    target_tokens_per_sec: 12
+  tts:
+    hub_candidates:
+      - MeloTTS-EN
+      - PiperTTS-EN
+    unit: CPU
+    optional: true
+
+privacy:
+  default_mode: airplane
+  cloud_fallback: false
+  local_store: sqlite

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+models/
+*.onnx
+*.bin
+*.serialized.bin
+.env
+data/local/
+exports/
+.DS_Store

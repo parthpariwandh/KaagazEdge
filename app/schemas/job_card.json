@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkshopJobCard",
+  "type": "object",
+  "required": ["document_type", "language", "confidence"],
+  "properties": {
+    "document_type": { "const": "job_card" },
+    "language": { "enum": ["en", "hi", "bn", "mixed"] },
+    "workshop_name": { "type": "string" },
+    "machine_name": { "type": "string" },
+    "asset_tag": { "type": "string" },
+    "fault_description": { "type": "string" },
+    "spares_needed": { "type": "string" },
+    "safety_notes": { "type": "string" },
+    "voice_notes": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "needs_human_confirm": { "type": "boolean" }
+  }
+}

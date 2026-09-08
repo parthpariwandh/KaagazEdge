@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClinicReport",
+  "type": "object",
+  "required": ["document_type", "language", "confidence"],
+  "properties": {
+    "document_type": { "const": "clinic_report" },
+    "language": { "enum": ["en", "hi", "bn", "mixed"] },
+    "patient_label": { "type": "string" },
+    "facility": { "type": "string" },
+    "report_date": { "type": "string" },
+    "test_name": { "type": "string" },
+    "finding_summary": { "type": "string" },
+    "doctor_name": { "type": "string" },
+    "voice_notes": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "needs_human_confirm": { "type": "boolean" }
+  }
+}

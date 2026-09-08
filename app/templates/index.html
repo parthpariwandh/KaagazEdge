@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KaagazEdge desk</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">KaagazEdge</div>
+    <div class="sub">On device Indic document and voice clerk for Snapdragon powered HP PCs</div>
+  </header>
+  <main>
+    <section class="panel">
+      <h1>Capture</h1>
+      <form id="extract-form">
+        <label>Document type
+          <select name="schema_name" id="schema_name">
+            <option value="invoice">GST invoice</option>
+            <option value="marksheet">Marksheet</option>
+            <option value="clinic_report">Clinic report</option>
+            <option value="job_card">Workshop job card</option>
+          </select>
+        </label>
+        <label>Spoken language
+          <select name="language" id="language">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="bn">Bengali</option>
+          </select>
+        </label>
+        <label>Page photo
+          <input type="file" name="image" id="image" accept="image/*">
+        </label>
+        <label>Voice note
+          <input type="file" name="audio" id="audio" accept="audio/*">
+        </label>
+        <button type="submit">Extract on this PC</button>
+      </form>
+      <p class="hint" id="status">Offline by default. No cloud model call is made.</p>
+    </section>
+    <section class="panel">
+      <h1>Confirm</h1>
+      <div id="fields"></div>
+      <label class="letter-label">Draft letter
+        <textarea id="letter" rows="8" readonly></textarea>
+      </label>
+      <button type="button" id="confirm-btn" disabled>Confirm and export Excel</button>
+      <p class="hint" id="export-status"></p>
+    </section>
+  </main>
+  <footer>
+    Parth Pariwandh · Jadavpur University · Individual entry · Snapdragon AI Lab Build and Present Challenge
+  </footer>
+  <script src="/static/desk.js"></script>
+</body>
+</html>

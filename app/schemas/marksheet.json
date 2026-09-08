@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AcademicMarksheet",
+  "type": "object",
+  "required": ["document_type", "language", "confidence"],
+  "properties": {
+    "document_type": { "const": "marksheet" },
+    "language": { "enum": ["en", "hi", "bn", "mixed"] },
+    "student_name": { "type": "string" },
+    "roll_number": { "type": "string" },
+    "institution": { "type": "string" },
+    "board_or_university": { "type": "string" },
+    "examination": { "type": "string" },
+    "year": { "type": "string" },
+    "result": { "type": "string" },
+    "voice_notes": { "type": "string" },
+    "confidence": { "type": "number" }
+  }
+}

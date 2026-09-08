@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IndiaGSTInvoice",
+  "type": "object",
+  "required": ["document_type", "language", "confidence"],
+  "properties": {
+    "document_type": { "const": "gst_invoice" },
+    "language": { "enum": ["en", "hi", "bn", "mixed"] },
+    "supplier_name": { "type": "string" },
+    "supplier_gstin": { "type": "string" },
+    "buyer_name": { "type": "string" },
+    "buyer_gstin": { "type": "string" },
+    "invoice_number": { "type": "string" },
+    "invoice_date": { "type": "string" },
+    "place_of_supply": { "type": "string" },
+    "taxable_value": { "type": "number" },
+    "cgst": { "type": "number" },
+    "sgst": { "type": "number" },
+    "igst": { "type": "number" },
+    "grand_total": { "type": "number" },
+    "currency": { "type": "string", "default": "INR" },
+    "voice_notes": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+  }
+}
